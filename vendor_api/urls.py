@@ -7,11 +7,10 @@ from .views import (
     VendorPerformanceView,
     PurchaseOrderAcknowledgmentView,
     VendorHistoricalPerformanceView,
-    vendor_list,
+    
 )
 
 urlpatterns = [
-    path('vendor/', vendor_list, name='vendor-list'),
     path('vendors/', VendorListCreateView.as_view(), name='vendor-list-create'),
     path('vendors/<int:pk>/', VendorDetailView.as_view(), name='vendor-detail'),
     path('vendors/<int:pk>/performance/',VendorPerformanceView.as_view(), name='vendor-performance'),

@@ -2,13 +2,7 @@ from datetime import timezone
 from rest_framework import generics
 from .models import Vendor, PurchaseOrder, HistoricalPerformance
 from .serializers import VendorSerializer, PurchaseOrderSerializer, HistoricalPerformanceSerializer
-from django.shortcuts import render
 from .models import Vendor
-
-
-def vendor_list(request):
-    vendors = Vendor.objects.all()
-    return render(request, 'vendor_list.html', {'vendors': vendors})
 
 
 class VendorListCreateView(generics.ListCreateAPIView):
